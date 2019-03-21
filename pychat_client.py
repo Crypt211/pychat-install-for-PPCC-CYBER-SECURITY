@@ -1,4 +1,4 @@
-import select, socket, sys
+import select, socket, sys, os
 from pychat_util import Room, Hall, Player
 import pychat_util
 
