@@ -54,7 +54,7 @@ class Hall:
             print("New connection from:", player.name)
             player.socket.sendall(instructions)
 
-        elif "<join>" in msg:
+        elif "join" in msg:
             same_room = False
             if len(msg.split()) >= 2: # error check
                 room_name = msg.split()[1]
@@ -75,13 +75,13 @@ class Hall:
             else:
                 player.socket.sendall(instructions)
 
-        elif "<list>" in msg:
+        elif "list" in msg:
             self.list_rooms(player) 
 
-        elif "<manual>" in msg:
+        elif "manual" in msg:
             player.socket.sendall(instructions)
         
-        elif "<quit>" in msg:
+        elif "quit" in msg:
             player.socket.sendall(QUIT_STRING.encode())
             self.remove_player(player)
 
